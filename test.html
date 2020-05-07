@@ -1,0 +1,42 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>JS实时获取鼠标坐标值并显示</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var getCoordInDocumentExample = function () {
+            var coords = document.getElementById("coords");
+            coords.onmousemove = function (e) {
+                var pointer = getCoordInDocument(e);
+                var coord = document.getElementById("coord");
+                coord.innerHTML = "X,Y=(" + pointer.x + ", " + pointer.y + ")";
+            }
+        }
+        var getCoordInDocument = function (e) {
+            e = e || window.event;
+            var x = e.pageX || (e.clientX +
+                (document.documentElement.scrollLeft
+                    || document.body.scrollLeft));
+            var y = e.pageY || (e.clientY +
+                (document.documentElement.scrollTop
+                    || document.body.scrollTop));
+            return { 'x': x, 'y': y };
+        }
+        window.onload = function () {
+            getCoordInDocumentExample();
+        };
+    </script>
+    <div id="coords" style="width:500px;height:200px;background:#F2F1D7;
+border:2px solid #0066cc;">
+        请在此移动鼠标。
+    </div>
+    <br />
+    <div id="coord" style="width:500px;border:2px solid #336699;"> </div>
+</body>
+
+</html>
