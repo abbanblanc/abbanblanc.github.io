@@ -1,70 +1,92 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-        @media (max-height: 1200px) {
-            body {
-                background-color: rgb(226, 147, 79);
-            }
-    
-            .titleimage {
-                width: 25%;
-                position: absolute;
-                margin: auto;
-                bottom: 30%;
-                top: 0;
-                left: 0;
-                right: 0;
-            }
-    
-            .search {
-                position: absolute;
-                width: 50%;
-                height: 7%;
-                margin: auto;
-                bottom: 0;
-                top: 0;
-                left: 0;
-                right: 0;
-                font-size: 2vw;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
+        body {
+            background: rgb(226, 147, 79);
         }
 
-        @media (max-width: 1440px) {
-            body {
-                background-color: rgb(226, 147, 79);
-            }
-    
-            .titleimage {
-                width: 50%;
-                position: absolute;
-                margin: auto;
-                bottom: 20%;
-                top: 0;
-                left: 0;
-                right: 0;
-            }
-    
-            .search {
-                position: absolute;
-                width: 75%;
-                height: 7%;
-                margin: auto;
-                bottom: 0;
-                top: 0;
-                left: 0;
-                right: 0;
-                font-size: 2vw;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
+        .container {
+            display: grid;
+            justify-items: center;
+            grid-template-rows: auto auto auto auto;
+            grid-row-gap: 3vh;
+
         }
+
+        .emptydiv {
+            height: 15vh;
+        }
+
+        .titleimg {
+            width: 60vw;
+            height: auto;
+            bottom: 0;
+        }
+
+        .searchinput {
+            width: 70vw;
+            height: 7vh;
+            font-size: 4vh;
+            border: 1px solid red;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24), 0 5px 10px 0 rgba(0,0,0,0.19);
+        }
+
+        .searchinput:focus {
+            
+        }
+
+        .searchbtns {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-column-gap: 2vw;
+        }
+
+        .searchbtn {
+            background-color: #ffdcb4;
+            border: none;
+            border-radius: 8px;
+            width: 20vw;
+            height: 10vh;
+            transition-duration: 0.4s;
+        }
+
+        .searchbtn:hover {
+            background-color: white;
+        }
+
+        .btnlogo {
+            width: auto;
+            height: 6vh;
         }
     </style>
-<title>SomeGo</title>
+    <title>SomeGo</title>
 
 </head>
 
 <body>
-<img class=titleimage src="res/img/title-somego.png">
-<input class="search">
+    <div class="container">
+        <div class="emptydiv">
+
+        </div>
+        <div class="titleimgdiv">
+            <img class="titleimg" src="res/img/title-somego.png">
+        </div>
+        <div class="searchinputdiv">
+            <input class="searchinput" type="text">
+        </div>
+        <div class="searchbtns">
+            <div class="searchbtndiv">
+                <button class="searchbtn" id="bilibtn"><img src="res/img/bililogo.png" alt="bililogo"
+                        class="btnlogo"></button>
+            </div>
+            <div class="searchbtndiv">
+                <button class="searchbtn" id="baidubtn"><img src="res/img/googlelogo.png" alt="googlelogo"
+                        class="btnlogo"></button>
+            </div>
+            <div class="searchbtndiv">
+                <button class="searchbtn" id="googlebtn"><img src="res/img/baidulogo.png" alt="baidulogo"
+                        class="btnlogo"></button>
+            </div>
+        </div>
+    </div>
 </body>
