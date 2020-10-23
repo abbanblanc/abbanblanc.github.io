@@ -64,7 +64,40 @@
         }
     </style>
     <title>SomeGo</title>
+    <script>
+        
+        function bilisearch() {
+            var keyWord=document.getElementsByClassName("searchinput")[0].value;
+            if (keyWord === "") {
+                window.open('https://www.bilibili.com')
+            }
+            else {
+                window.open('https://search.bilibili.com/all?keyword='+keyWord)
+            }
+        }
 
+        function googlesearch() {
+            var keyWord=document.getElementsByClassName("searchinput")[0].value;
+            if (keyWord === "") {
+                window.open('https://www.google.com')
+            }
+            else {
+                window.open('https://www.google.com/search?q='+keyWord)
+            }
+        }
+
+        function baidusearch() {
+            var keyWord=document.getElementsByClassName("searchinput")[0].value;
+            if (keyWord === "") {
+                window.open('https://www.baidu.com')
+            }
+            else {
+                window.open('https://www.baidu.com/s?wd='+keyWord)
+            }
+        }   
+
+        
+    </script>
 </head>
 
 <body>
@@ -76,21 +109,31 @@
             <img class="titleimg" src="res/img/title-somego.png">
         </div>
         <div class="searchinputdiv">
-            <input class="searchinput" type="text">
+            <input class="searchinput" id="gj" type="text" autofocus="autofocus" placeholder="在那黑色的无知之海上，吾乃闪耀的芝士蛋挞">
         </div>
         <div class="searchbtns">
             <div class="searchbtndiv">
-                <button class="searchbtn" id="bilibtn"><img src="res/img/bililogo.png" alt="bililogo"
+                <button class="searchbtn" id="bilibtn" onclick="bilisearch()"><img src="res/img/bililogo.png" alt="bililogo"
                         class="btnlogo"></button>
             </div>
             <div class="searchbtndiv">
-                <button class="searchbtn" id="baidubtn"><img src="res/img/googlelogo.png" alt="googlelogo"
+                <button class="searchbtn" id="googlebtn" onclick="googlesearch()"><img src="res/img/googlelogo.png" alt="googlelogo"
                         class="btnlogo"></button>
             </div>
             <div class="searchbtndiv">
-                <button class="searchbtn" id="googlebtn"><img src="res/img/baidulogo.png" alt="baidulogo"
+                <button class="searchbtn" id="baidubtn" onclick="baidusearch()"><img src="res/img/baidulogo.png" alt="baidulogo"
                         class="btnlogo"></button>
             </div>
         </div>
     </div>
+    <script>
+        var input = document.getElementsByClassName("searchinput")[0]
+
+        input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("googlebtn").onclick();
+            }
+        })
+    </script>
 </body>
