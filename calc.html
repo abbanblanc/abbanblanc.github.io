@@ -1,27 +1,35 @@
 <head>
     <style>
+        input {
+            width: 50vw;
+        }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
-    <div class="round">
-        <input type="text" id="diaRound" placeholder="圆形直径">
-    </div>
-    <div class="column">
-        <input type="text" id="diaColumn" placeholder="瓶子直径">
-    </div>
-    <div>
-        <button id="calculate" onclick="calc()">计算</button>
-        <p id="width">"宽度"</p>
+    <div class="container">
+        <div class="round">
+            <input type="text" id="diaRound" placeholder="圆形直径">
+        </div>
+        <div class="column">
+            <input type="text" id="diaColumn" placeholder="瓶子直径">
+        </div>
+        <div>
+            <button id="calculate" onclick="calc()">计算</button>
+            <p id="width">"宽度"</p>
+        </div>
     </div>
     <script>
-        function calc(){
-            a=document.getElementById("diaRound").value
-            b=document.getElementById("diaColumn").value
-            document.getElementById("width").innerHTML=a*a/(b*Math.sin(a/b))
+        function calc() {
+            a = document.getElementById("diaRound").value
+            b = document.getElementById("diaColumn").value
+            document.getElementById("width").innerHTML = a * a / (b * Math.sin(a / b))
         }
     </script>
 </body>
-
-
