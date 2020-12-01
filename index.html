@@ -28,7 +28,7 @@
             height: 7vh;
             font-size: 4vh;
             border: 1px solid red;
-            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24), 0 5px 10px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
         }
 
         .searchinput:focus {
@@ -65,38 +65,38 @@
     </style>
     <title>SomeGo</title>
     <script>
-        
+
         function bilisearch() {
-            var keyWord=document.getElementsByClassName("searchinput")[0].value;
+            var keyWord = document.getElementsByClassName("searchinput")[0].value;
             if (keyWord === "") {
                 window.open('https://www.bilibili.com')
             }
             else {
-                window.open('https://search.bilibili.com/all?keyword='+keyWord)
+                window.open('https://search.bilibili.com/all?keyword=' + keyWord)
             }
         }
 
         function googlesearch() {
-            var keyWord=document.getElementsByClassName("searchinput")[0].value;
+            var keyWord = document.getElementsByClassName("searchinput")[0].value;
             if (keyWord === "") {
                 window.open('https://www.google.com')
             }
             else {
-                window.open('https://www.google.com/search?q='+keyWord)
+                window.open('https://www.google.com/search?q=' + keyWord)
             }
         }
 
         function baidusearch() {
-            var keyWord=document.getElementsByClassName("searchinput")[0].value;
+            var keyWord = document.getElementsByClassName("searchinput")[0].value;
             if (keyWord === "") {
                 window.open('https://www.baidu.com')
             }
             else {
-                window.open('https://www.baidu.com/s?wd='+keyWord)
+                window.open('https://www.baidu.com/s?wd=' + keyWord)
             }
-        }   
+        }
 
-        
+
     </script>
 </head>
 
@@ -113,16 +113,16 @@
         </div>
         <div class="searchbtns">
             <div class="searchbtndiv">
-                <button class="searchbtn" id="bilibtn" onclick="bilisearch()"><img src="res/img/bililogo.png" alt="bililogo"
-                        class="btnlogo"></button>
+                <button class="searchbtn" id="bilibtn" onclick="bilisearch()"><img src="res/img/bililogo.png"
+                        alt="bililogo" class="btnlogo"></button>
             </div>
             <div class="searchbtndiv">
-                <button class="searchbtn" id="googlebtn" onclick="googlesearch()"><img src="res/img/googlelogo.png" alt="googlelogo"
-                        class="btnlogo"></button>
+                <button class="searchbtn" id="googlebtn" onclick="googlesearch()"><img src="res/img/googlelogo.png"
+                        alt="googlelogo" class="btnlogo"></button>
             </div>
             <div class="searchbtndiv">
-                <button class="searchbtn" id="baidubtn" onclick="baidusearch()"><img src="res/img/baidulogo.png" alt="baidulogo"
-                        class="btnlogo"></button>
+                <button class="searchbtn" id="baidubtn" onclick="baidusearch()"><img src="res/img/baidulogo.png"
+                        alt="baidulogo" class="btnlogo"></button>
             </div>
         </div>
     </div>
@@ -135,5 +135,11 @@
                 document.getElementById("googlebtn").onclick();
             }
         })
+    </script>
+    <canvas class="fireworks"
+        style="position: fixed; left: 0px; top: 0px; z-index: 1; pointer-events: none; width: 1440px; height: 451px;"
+        width="2880" height="902"></canvas>
+    <script type="text/javascript" src="anime.min.js"></script>
+    <script type="text/javascript" src="cursor.js">
     </script>
 </body>
