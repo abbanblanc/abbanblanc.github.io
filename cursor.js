@@ -74,16 +74,6 @@ function animateParticules(e, t) {
       easing: "easeOutExpo",
       update: renderParticule,
     })
-    .add({
-      targets: a,
-      radius: anime.random(80, 160),
-      lineWidth: 0,
-      alpha: { value: 0, easing: "linear", duration: anime.random(600, 800) },
-      duration: anime.random(1200, 1800),
-      easing: "easeOutExpo",
-      update: renderParticule,
-      offset: 0,
-    });
 }
 function debounce(e, t) {
   var a;
